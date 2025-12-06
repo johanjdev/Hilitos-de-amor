@@ -1,0 +1,1021 @@
+/*Fuente Hilitos de amor*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+/*Fuente Body*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/*Fuente amigus*/
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+:root {
+    --bg-col-body: #cdc7bd;
+    --bg-col-nav: #5f1515;
+    --bg-col-ltr: #f1ebeb;
+    --bg-col-hov: #741717;
+    --bg-col-bien: #f1ebeb;
+    --bg-col-ami: #52130c;
+    --bg-col-her: #5f1515;
+    --bg-col-contac: #f1ebeb;
+    --bg-col-nltr: rgb(0,0,0);
+    --bg-color-con: transparent; /* Nuevo color para inputs en contacto */
+    --color-lrt: #fff; /* Color de texto para inputs */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-col-body);
+    font-family: "Nunito", sans-serif;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.navegacion {
+    margin: 0px;
+    padding:15px;
+    display: flex;
+    background-color: var(--bg-col-nav);
+    justify-content:space-between;
+    align-items: center;
+}
+
+.navegacion h1  {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--bg-col-body);
+}
+
+.navegacion a {
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Botón hamburguesa oculto en escritorio */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--bg-col-ltr);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Menú horizontal en escritorio */
+.menu {
+  display: block;
+}
+
+.menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--bg-col-body);
+  font-weight: 600;
+  padding: 6px 10px;
+  transition: background 0s ease;
+}
+
+.menu a:hover {
+  background-color: var(--bg-col-hov);
+  color: var(--bg-col-nltr);
+  border-radius: 15px;
+}
+
+.menu-close {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--bg-col-ltr);
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 1100;
+}
+/* imagen de fondo de bienvenida PENDIENTE*/
+
+.bienvenida {
+    background-color: var(--bg-col-body);
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--bg-col-nltr);
+    font-weight: 600;
+}
+/*
+.cuadrado {
+    width: 0;
+    height: 0;
+    width: 50vw;   ocupa la mitad del ancho de la pantalla
+    height: 25vh;   ocupa un cuarto de la altura
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    margin: auto;
+    border-bottom: 460px solid red;  
+    position: absolute;
+    top: 5px;
+    left: 230px;
+}  
+*/
+.frase {
+    display: inline-flex;
+    align-items: center ;
+    gap: 10px;
+}
+
+.bienvenida h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    display: inline;
+}
+
+.hilitos {
+    font-family: "Dancing Script", cursive;
+    font-size: 2rem;
+    display: inline;
+    color: var(--bg-col-nltr);
+    color: red;
+}
+
+.bienvenida p {
+    margin: 20px auto 0;
+    max-width: 600px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/*cajitas*/
+
+.collage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 10px;
+    padding: 20px;
+    background-color: var(--bg-col-nav);
+}
+
+/* Estilos base para cada cuadro */
+.cuadro {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Overlay oculto por defecto */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6); /* fondo semitransparente */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0; /* invisible inicialmente */
+    transition: opacity 0.3s ease;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.cuadro:hover .overlay {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Cuadros con tamaños personalizados */
+.cuadro1 {
+    grid-column: span 4;
+    grid-row: span 2;
+    background-image: url(../img/osos.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.cuadro2 {
+    grid-column: span 2;
+    background-image: url(../img/lanagris.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.cuadro3 {
+    grid-column: span 1;
+    background-image: url(../img/agujas.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.cuadro4 {
+    grid-column: span 1;
+    background-image: url(../img/tejer.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.amigus {
+    width: 100%;
+    min-height: 50vh;
+    padding: 40px 0;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.amigus h1 {
+    color:var(--bg-col-nltr);
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+}
+
+.amigus-row {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.amigus-col {
+    font-family: "Stack Sans Headline", sans-serif;
+    position: relative;
+    padding: 5% 10%;
+    border-radius: 15px;
+    color: var(--bg-col-nltr);
+    text-align: center;
+    isolation: isolate; /* Alternativa a z-index */
+    transition: transform 0.3s ease, background 0.3s ease; /* Transición agregada */
+}
+
+.amigus-col:hover {
+    transform: scale(1.05);
+    background-color: var(--bg-col-hov);
+    color: white;
+    border-radius: 15px;
+}
+
+
+.amigus-col p {
+    font-size: 1.5rem;
+}
+
+.amigus-col h3 {
+    font-size: 2rem;
+    margin: 1rem 0 2rem;
+    font-weight: 500;
+}
+
+.amigus-col ul {
+    text-align: left;
+    margin: 1.5rem 0;
+    color: var(--bg-col-nltr); /* Corregido para usar variable definida o color negro */
+    padding-left: 0;
+    list-style: none;
+}
+
+.amigus-col ul li {
+    margin: 1rem 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.amigus-col ul li::before {
+    content: '';
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.amigus-image {
+    width: 100%; 
+    height: auto; 
+    max-width: 200px; 
+    max-height: 200px; 
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* CSS´S herramientas */
+
+.herramientas {
+    margin: 0px;
+    padding: 100px ;
+    background-color:var(--bg-col-her);
+    color: var(--bg-col-ltr) ;
+    justify-content:center;
+}
+
+.herramientas h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adicionales {
+    padding: 20px;
+    background-color:transparent;
+    border: 2px solid #eec0c0;
+    border-radius: 15px;
+    color: var(--bg-col-ltr) ;
+    text-align: left;
+    margin: 0 auto;
+    display: block;
+    max-width: 600px;
+    width: 90%;
+}
+
+/* CSS'S Materiales */
+
+.materiales {
+    background-color: var(--bg-col-body);
+    margin: 0px;
+    padding: 100px ;
+    justify-content:center;
+}
+
+.materiales h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer {
+    margin: 0px;
+    padding: 30px; /* Reducción de padding para que no sea excesivo */
+    justify-content:center;
+    background-color: var(--bg-col-her); /* Corregido: debería ser el color de nav/herramientas */
+    color: var(--bg-col-ltr);
+    text-align: center;
+}
+
+/* CSS formulario de contacto */
+
+.formulario {
+    background-color: var(--bg-col-contac);
+    padding: 60px 20px;
+    color: var(--bg-col-nltr);
+    font-weight: 600;
+}
+
+.formulario form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Configuracion panel izquierdo */
+.izquierdo {
+    background-color: var(--bg-col-contac);
+    padding: 3rem;
+    flex-direction: column;
+    max-width: 600px; /* Limitando el ancho para escritorio */
+    flex-grow: 1;
+}
+
+/* Configuracion panel derecho */
+
+.derecho {  
+    background-color: var(--bg-col-body);
+    padding: 2rem;
+    margin-left: -5%; /* Ajuste para superponer en escritorio */
+    max-width: 450px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Configuracion input´s, textarea y boton */
+input, textarea {
+    padding: 10px; /* Aumentado el padding para mejor usabilidad */
+    border: none;
+    border-radius: 15px;
+    font-family: "Nunito", sans-serif;
+    color: var(--color-lrt);
+    font-size: 1rem;
+    outline: none;
+    background-color: transparent; /* El fondo lo da el contenedor .nombref, etc */
+    width: calc(100% - 35px); /* Ajuste del ancho para dejar espacio al icono */
+}
+
+input {
+    height: 35px;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+    width: calc(100% - 40px);
+}
+
+button{
+    padding: 0.75rem;
+    background-color: var(--bg-col-contac);
+    color: var(--bg-col-nltr);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100px; /* Aumentado el ancho */
+    height: 45px; /* Aumentado la altura */
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--bg-col-body);
+}
+
+.enviar {
+    text-align: right;
+}
+
+/* Configuracion iconos de cada input */
+
+/* Estilos de campo base: fondo y borde */
+.nombref, .correof, .telefonof, .mensajef {
+    background-color: var(--bg-color-con);
+    border: 2px solid #ffff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    position: relative;
+}
+
+.nombref i, .correof i, .telefonof i, .mensajef i{
+    color: var(--color-lrt);
+    margin: 5px;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 10px;
+}
+
+.nombref input, .correof input, .telefonof input {
+    padding-left: 35px; /* Mueve el texto a la derecha del icono */
+    width: calc(100% - 45px); /* Ajuste de ancho */
+}
+
+/* Estilo específico para el área de texto (mensaje) */
+.mensajef {
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+}
+
+.mensajef textarea {
+    padding-left: 35px;
+    margin-left: 5px;
+    width: calc(100% - 45px);
+}
+
+.mensajef i {
+    top: 15px; /* Alineación vertical del icono de mensaje */
+    transform: none;
+}
+
+/*amigus CSS*/
+
+.eonline-landing-wrapper {
+    /* Fondo claro similar al del diseño */
+    background-color: var(--bg-col-bien);
+    padding: 30px 50px;
+    font-family: 'Nunito', sans-serif; /* Usamos la fuente de tu proyecto */
+    max-width: 1400px;
+    margin: 40px auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Cabecera y Navegación --- */
+.eonline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.eonline-logo {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0; /* Anula cualquier margen de tu CSS global */
+    color: #333;
+}
+
+.eonline-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.eonline-nav-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.eonline-nav-link:hover {
+    color: #5d5dff;
+}
+
+.eonline-btn-sign {
+    background: linear-gradient(to right, #8b1515, black);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+/* --- Hero Section --- */
+.eonline-hero-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.eonline-text-area {
+    flex: 1;
+}
+
+.eonline-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+.eonline-highlight {
+    color: #ff8c00;
+}
+
+.eonline-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 30px 0;
+}
+
+.eonline-btn-contact a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.eonline-btn-contact {
+    background-color: var(--bg-col-ami);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.eonline-courses-title {
+    font-weight: 400;
+}
+
+.eonline-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.eonline-stat-item {
+    text-align: left;
+}
+
+.eonline-stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #333;
+}
+
+.eonline-stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.eonline-image-area {
+    flex: 1;
+    min-height: 450px;
+    /* Simulando la imagen y el fondo violeta */
+    background: radial-gradient(circle at 75% 50%, #21095330, transparent);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.eonline-graphic-container {
+    /* Posición donde estaría la imagen */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 90%;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(181, 69, 69, 0.1);
+}
+
+/* --- Cursos --- */
+.eonline-courses-section {
+    padding-top: 50px;
+}
+
+.eonline-courses-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.eonline-course-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.eonline-course-card {
+    height: 150px;
+    border-radius: 15px;
+    color: var(--bg-col-nltr);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.eonline-course-card:hover {
+    transform: translateY(-5px);
+}
+
+.eonline-card-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.eonline-course-card p {
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Colores de las tarjetas */
+.eonline-bg-pink { background-color: var(--bg-col-bien);}
+.eonline-bg-purple { background-color: var(--bg-col-bien);}
+.eonline-bg-blue { background-color: var(--bg-col-bien);}
+.eonline-bg-orange { background-color: var(--bg-col-bien);}
+.eonline-landing-wrapper { background-color: var(--bg-col-body);}
+
+/*Patrones*/
+
+.patron {
+    background-color: var(--bg-col-contac); /* Fondo claro para contraste */
+    padding: 30px;
+    margin: 40px auto; /* Centrar el bloque y añadir margen vertical */
+    max-width: 800px; /* Limitar el ancho para mejor lectura */
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.patron h2 {
+    color: var(--bg-col-nav); /* Color de encabezado fuerte */
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--bg-col-nav);
+    padding-bottom: 10px;
+}
+
+.patron ul {
+    list-style-type: none; /* Quitar viñetas por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.patron ul li {
+    background-color: var(--bg-col-ltr); /* Fondo ligeramente diferente para cada línea */
+    padding: 10px 15px;
+    margin-bottom: 8px; /* Espacio entre cada línea */
+    border-radius: 8px;
+    line-height: 1.5;
+    font-size: 1.05rem;
+    color: var(--bg-col-nltr); /* Texto oscuro */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.patron ul li:hover {
+    transform: translateX(5px);
+    background-color: #e0deda;
+}
+
+
+/* Media Query para móviles pequeños (480px y abajo) */
+@media (max-width: 480px) {
+  .bienvenida {
+    padding: 30px 10px;
+  }
+
+  .bienvenida h2 {
+    font-size: 1.2rem;
+  }
+
+  .hilitos {
+    font-size: 1.5rem;
+  }
+
+  .bienvenida p {
+    display: none; /* Oculta el texto largo en móviles muy pequeños */
+  }
+
+  /* --- Amigurumis Adaptación --- */
+  .amigus-row {
+    grid-template-columns: 1fr; /* 1 columna en móvil pequeño */
+  }
+
+  .amigus-col p {
+    font-size: 1.2rem;
+  }
+
+  /* --- Contacto - Ajuste final --- */
+  .derecho {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 1100px) {
+    .eonline-title {
+        font-size: 3rem;
+    }
+    .eonline-course-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    }
+    .eonline-bg-plus {
+        display: none; /* Ocultar el botón 'Browse All' en tablet */
+    }
+}
+
+@media (max-width: 900px) {
+    .eonline-hero-content {
+        flex-direction: column; /* Apilar contenido y imagen */
+        text-align: center;
+    }
+    .eonline-text-area {
+        order: 2; /* Mueve el texto debajo de la imagen */
+    }
+    .eonline-image-area {
+        order: 1; /* Mueve la imagen arriba del texto */
+        min-height: 350px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .eonline-stats {
+        justify-content: center; /* Centrar estadísticas */
+    }
+    .eonline-courses-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .eonline-landing-wrapper {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .eonline-header {
+        flex-direction: column; /* Apila logo, nav y botón */
+        gap: 15px;
+        padding-bottom: 20px;
+    }
+    .eonline-btn-sign {
+        margin-top: 10px;
+    }
+    .eonline-title {
+        font-size: 2.5rem;
+    }
+    .eonline-subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    .eonline-course-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+    }
+}
+
+/*responsive amigus*/
+@media (max-width: 480px) {
+    .eonline-title {
+        font-size: 2rem;
+    }
+    .eonline-courses-title {
+        font-size: 1.5rem;
+    }
+    .eonline-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .eonline-stat-item {
+        text-align: center;
+    }
+}
+
+/* HTML'S responsive amigurumis*/ 
+
+/* Media Query para tabletas y dispositivos grandes */
+@media (max-width: 992px) {
+    /* --- Formulario de Contacto Adaptación --- */
+    .formulario form {
+        flex-direction: column; /* Apila el izquierdo y el derecho */
+        gap: 20px;
+        align-items: center;
+    }
+
+    .izquierdo {
+        padding: 30px 20px;
+        text-align: center; /* Centrar el texto en móvil */
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .derecho {
+        /* Deshacer las propiedades de posicionamiento absoluto de escritorio */
+        margin: 0 auto; 
+        max-width: 90%;
+        width: 90%;
+        position: static; 
+        top: auto; 
+        left: auto;
+    }
+
+    /* Asegurar que los campos de entrada ocupen todo el ancho disponible */
+    .nombref, .correof, .telefonof, .mensajef {
+        width: 100%;
+    }
+
+    .nombref input, .correof input, .telefonof input, .mensajef textarea {
+        width: calc(100% - 45px);
+    }
+}
+
+
+/* Media Query para dispositivos medianos y móviles (768px y abajo) */
+@media (max-width: 768px) {
+  /* --- Navegación (Hamburguesa) --- */
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: var(--bg-col-nav);
+    padding: 20px;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .menu.active {
+    display: block;
+    transform: translateX(0);
+  }
+
+   .menu-close {
+    display: block;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .navegacion {
+    flex-direction: row; /* Mantiene logo a la izquierda y hamburguesa a la derecha */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* --- Bienvenida --- */
+  .bienvenida h2 {
+    font-size: 1.5rem;
+  }
+
+  .hilitos {
+    font-size: 1.8rem;
+  }
+
+  /* --- Collage Adaptación --- */
+  .collage {
+    /* Cambia de 4 columnas a 1 columna */
+    grid-template-columns: 1fr;
+    grid-auto-rows: 150px; 
+    gap: 15px;
+    padding: 10px;
+  }
+
+  /* Ahora todos los cuadros ocuparán 1 columna completa */
+  .cuadro1, .cuadro2, .cuadro3, .cuadro4 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .overlay {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  /* --- Amigurumis Adaptación --- */
+  .amigus-row {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    width: 95%;
+  }
+
+  /* --- Herramientas y Materiales --- */
+  .herramientas, .materiales {
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+    .eonline-hero-content {
+        flex-direction: column; /* Apilar contenido y imagen */
+        text-align: center;
+    }
+    .eonline-text-area {
+        order: 2;
+    }
+    .eonline-image-area {
+        order: 1;
+        min-height: 350px; /* Reducir altura en móvil */
+        width: 100%;
+        margin-bottom: 30px;
+        background: none; 
+    }
+    
+    .eonline-graphic-container {
+        position: relative; /* Cambiamos a posición relativa */
+        top: 0;
+        left: 0;
+        transform: none; /* Eliminamos la transformación */
+        width: 90%; /* Ajustamos el ancho para que respire */
+        height: 350px; /* Definimos una altura */
+        margin: auto; /* Centramos el contenedor */
+    }
+
+}
